@@ -74,9 +74,7 @@ constraint forall(t in TEAMS where t > 1)(
   breaks[1] <= breaks[t]                 % team 1 has min breaks
 );
 
-%======================================================================
-%                         TWO-PHASE SEARCH
-%======================================================================
+% search 2 phase
 solve::
   seq_search([
    int_search(
