@@ -1,6 +1,7 @@
-%SRR satisfiability
-include "globals.mzn"; 
+% srr break optimality
+include "globals.mzn";
 include "chuffed.mzn";
+
 % --- parameters
 int: n;
 
@@ -9,6 +10,7 @@ set of int: W= 1..n-1; % weeks
 set of int: P= 1..n div 2; % periods
 int: MIN_BREAKS=n-2;
 int: MAX_BREAKS=(n-1)*(n-2);
+
 % --- decision variables
 
 array[W,T]  of var T  : opp; % opponent of team t in week w
@@ -18,7 +20,7 @@ array[W,T]  of var P: per; % period in which team plays
 %--- objective variable and function
 array[2..n-1, T] of var bool: break; % break[w,t] = true if team t has a break after week w
 
-% total_breaks is at least n-2 (the theoretical optimum) and at most n·(n-2)
+% total_breaks is at least n-2 (the theoretical optimum) and at most (n-1)·(n-2)
 var MIN_BREAKS..MAX_BREAKS : total_breaks;
 
 constraint
@@ -42,7 +44,6 @@ constraint forall(w in W) (
     global_cardinality([per[w, t] | t in T], P, [2 | _ in P])
 );
 
-
 % SRR-> each team meets every other exactly one time
 constraint forall(t in T) (
     alldifferent([opp[w, t] | w in W])
@@ -50,7 +51,7 @@ constraint forall(t in T) (
 
 % a team can compare in the same period maximum 2 times
 constraint forall(t in T, p in P)(
-   sum(w in W)(per[w,t] = p) <= 2
+   sum(w in W)(bool2int(per[w,t] = p)) <= 2
 );
 
 % Break definition: a break occurs when team t has same home/away status in consecutive weeks
@@ -68,50 +69,23 @@ constraint forall(w in W, t in T)(
 % fix team 1 in home the first week
 constraint h[1, 1] = true;
 
-% canonical first-week pairing
-
 % week permutation
-constraint
-   forall(w in 2..n-1)(opp[w,1] > opp[w-1,1]);
+constraint forall(w in 2..n-1)(opp[w,1] > opp[w-1,1]);
 
-%--searches
+% ---search
 
 array[int] of var int  : oppVars = [ opp[w,t] | w in W, t in T ];
 array[int] of var int  : perVars = [ per[w,t] | w in W, t in T ];
 array[int] of var bool : hVars   = [  h[w,t] | w in W, t in T ];
 
-%solve :: seq_search([
-%       int_search(oppVars,  dom_w_deg, indomain_random),   % smart+diverse
-%       int_search(perVars,  dom_w_deg, indomain_min),    % forced slots
- %      bool_search(hVars,   input_order, indomain_min)     % branch last
- %  ]) minimize total_breaks;
+solve
+:: seq_search([
+      int_search(oppVars,  random_order, indomain_split),    
+      int_search(perVars,  random_order, indomain_split),     
+      bool_search(hVars,   random_order, indomain_split)      
+  ]) :: restart_luby(250) minimize total_breaks;
 
 
-%solve
-%:: seq_search([
-%       int_search(oppVars,  dom_w_deg, indomain_random),   % smart+diverse
-%       int_search(perVars,  input_order, indomain_min),    % forced slots
-%       bool_search(hVars,   input_order, indomain_min)     % branch last
-%   ])
-%   :: restart_luby( 250 ) minimize total_breaks;   %57 secondi 10
-
-% Strategy 2: If you want to try LNS, use smaller neighborhoods
-% solve
-% :: seq_search([
-%        int_search(oppVars,  dom_w_deg, indomain_random),      
-%        int_search(perVars,  input_order, indomain_random),
-%        bool_search(hVars,   input_order, indomain_random)
-%    ])
-%    :: restart_luby( 250 )                                  
-%    :: relax_and_reconstruct(oppVars, 20)                  
-%    minimize total_breaks;
-
-solve:: seq_search([
-        int_search(oppVars,  random_order, indomain_min),      
-        int_search(perVars,  random_order, indomain_min),
-        bool_search(hVars,   random_order, indomain_min)
-    ]) minimize total_breaks;
-%solve minimize total_breaks;
 output [
     "Schedule SRR Tournament (Break Minimization):\n",
     "Total breaks: " ++ show(total_breaks) ++ "\n\n",

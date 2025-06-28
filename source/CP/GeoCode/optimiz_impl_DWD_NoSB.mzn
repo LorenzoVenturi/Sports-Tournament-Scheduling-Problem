@@ -1,6 +1,6 @@
-%SRR satisfiability
+% srr break optimality
 include "globals.mzn"; 
-
+%include "chuffed.mzn";
 % --- parameters
 int: n;
 
@@ -42,7 +42,6 @@ constraint forall(w in W) (
     global_cardinality([per[w, t] | t in T], P, [2 | _ in P])
 );
 
-
 % SRR-> each team meets every other exactly one time
 constraint forall(t in T) (
     alldifferent([opp[w, t] | w in W])
@@ -50,7 +49,7 @@ constraint forall(t in T) (
 
 % a team can compare in the same period maximum 2 times
 constraint forall(t in T, p in P)(
-   sum(w in W)(per[w,t] = p) <= 2
+   sum(w in W)(bool2int(per[w,t] = p)) <= 2
 );
 
 % Break definition: a break occurs when team t has same home/away status in consecutive weeks
@@ -58,34 +57,24 @@ constraint forall(w in 2..n-1, t in T)(
    break[w,t] <-> (h[w-1,t] = h[w,t])
 );
 
-
+%exactly one team is home in each match
 constraint forall(w in W, t in T)(
    h[w,t] + h[w,opp[w,t]] = 1
 );
 
-% --- simmetry breaking constraints
-
-% fix team 1 in home the first week
-constraint h[1, 1] = true;
-
-% canonical first-week pairing
-constraint forall(w in 1..n-2) (
-   lex_less([opp[w, t] | t in T], [opp[w+1, t] | t in T])
-);
+%--searches
 
 array[int] of var int  : oppVars = [ opp[w,t] | w in W, t in T ];
 array[int] of var int  : perVars = [ per[w,t] | w in W, t in T ];
 array[int] of var bool : hVars   = [  h[w,t] | w in W, t in T ];
 
+
 solve
 :: seq_search([
-       int_search(oppVars, dom_w_deg, indomain_random),
-       int_search(perVars, input_order, indomain_min),
-       bool_search(hVars,  first_fail, indomain_min)
-   ])
-   :: restart_luby( 100 )
-minimize total_breaks;
-
+      int_search(oppVars,  dom_w_deg, indomain_min),    
+      int_search(perVars,  first_fail, indomain_min),     
+      bool_search(hVars,   first_fail, indomain_min)      
+  ]) minimize total_breaks;
 
 
 output [
