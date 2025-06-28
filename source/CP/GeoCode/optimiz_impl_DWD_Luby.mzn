@@ -26,9 +26,12 @@ constraint
 
 % constraints
 
-constraint forall(w in W, t in T) (
-    opp[w,t] != t /\ % No self-play
-    opp[w, opp[w,t]] = t % Mutuality
+% Forbids a team playing itself
+constraint forall(w in W,t in T) (opp[w,t] != t);
+
+% If team t1 plays t2, t2 plays t1, mutuality, and every team appears once a week
+constraint forall(w in W) (
+    inverse([opp[w,t] | t in T], [opp[w,t] | t in T])
 );
 
 %Both of the opponents must be scheduled on the same period.
@@ -76,9 +79,9 @@ array[int] of var bool : hVars   = [  h[w,t] | w in W, t in T ];
 solve
 :: seq_search([
       int_search(oppVars,  dom_w_deg, indomain_random),    
-      int_search(perVars,  first_fail , indomain_random),     
-      bool_search(hVars,   first_fail, indomain_random)
-  ]) :: restart_luby(100) minimize total_breaks;
+      int_search(perVars,  input_order , indomain_min),     
+      bool_search(hVars,   input_order, indomain_min)
+  ]) :: restart_luby(250) minimize total_breaks;
   
 output [
     "Schedule SRR Tournament (Break Minimization):\n",

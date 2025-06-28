@@ -26,9 +26,12 @@ constraint
 
 % constraints
 
-constraint forall(w in W, t in T) (
-    opp[w,t] != t /\ % No self-play
-    opp[w, opp[w,t]] = t % Mutuality
+% Forbids a team playing itself
+constraint forall(w in W,t in T) (opp[w,t] != t);
+
+% If team t1 plays t2, t2 plays t1, mutuality, and every team appears once a week
+constraint forall(w in W) (
+    inverse([opp[w,t] | t in T], [opp[w,t] | t in T])
 );
 
 %Both of the opponents must be scheduled on the same period.
