@@ -71,6 +71,7 @@ constraint h[1, 1] = true;
 constraint forall(w in 2..n-1)(opp[w,1] > opp[w-1,1]);
 
 
+
 %--searches
 
 array[int] of var int  : oppVars = [ opp[w,t] | w in W, t in T ];

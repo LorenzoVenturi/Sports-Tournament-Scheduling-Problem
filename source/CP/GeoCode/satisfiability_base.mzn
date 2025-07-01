@@ -43,6 +43,12 @@ constraint
 constraint forall(w in W, t in T) (
    h[w,t] + h[w, opp[w,t]] = 1);
 
+%implied
+constraint
+  forall(w in W, i in T, j in T where i < j) (
+    (opp[w,i] == j) -> (opp[w,j] == i)
+  );
+  
 
 solve satisfy;  
 

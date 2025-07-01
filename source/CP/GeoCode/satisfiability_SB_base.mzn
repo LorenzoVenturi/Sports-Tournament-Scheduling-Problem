@@ -48,7 +48,7 @@ constraint forall(w in W, t in T) (
 % week permutation
 constraint
    forall(w in 2..n-1)(opp[w,1] > opp[w-1,1]);
-
+   
 solve satisfy;
 
 output [

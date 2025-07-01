@@ -79,9 +79,9 @@ array[int] of var bool : hVars   = [  h[w,t] | w in W, t in T ];
 solve
 :: seq_search([
       int_search(oppVars,  dom_w_deg, indomain_random),    
-      int_search(perVars,  first_fail , indomain_random),     
-      bool_search(hVars,   first_fail, indomain_random)
-  ]) :: restart_luby(250) :: relax_and_reconstruct(oppVars,10) minimize total_breaks;
+      int_search(perVars,  first_fail , indomain_min),     
+      bool_search(hVars,   dom_w_deg, indomain_random)
+  ]) :: restart_luby(250) :: relax_and_reconstruct(oppVars,85) minimize total_breaks;
   
 output [
     "Schedule SRR Tournament (Break Minimization):\n",

@@ -46,7 +46,7 @@ constraint forall(w in W, t in T) (
 
 
 solve :: seq_search([
-   int_search(opp, dom_w_deg, indomain_random),
+    int_search(opp, dom_w_deg, indomain_random),
     int_search(per, dom_w_deg, indomain_random),
     bool_search(h,input_order, indomain_min)
 ]) satisfy;  

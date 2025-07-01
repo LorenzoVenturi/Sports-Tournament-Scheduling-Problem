@@ -1,7 +1,7 @@
 %SRR satisfiability
 include "globals.mzn";
 include "chuffed.mzn";
- 
+
 % --- parameters
 int: n; % even
 
