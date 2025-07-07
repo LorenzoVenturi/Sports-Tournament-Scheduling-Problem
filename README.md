@@ -3,13 +3,13 @@ Project work of the Combinatorial Decision Making and Optimization course for th
 
 # Building the docker
 step 1-> moving to the source directory) 
-''' 
+```
 cd source 
-'''
+```
 step 2-> building the docker) 
-'''
+```
 docker build -t sports-tournament-scheduler . 
-'''
+```
 
 # Running the docker
 To perform all the experiments, run:
