@@ -2,8 +2,6 @@
 
 This project implements a Sports Tournament Scheduling Problem solver using four different approaches: **Mixed Integer Linear Programming (MILP)**, **Boolean Satisfiability (SAT)**, **Satisfiability Modulo Theories (SMT)**, and **Constraint Programming (CP)**.
 
-## We correctly implemented the updating of the json files and the possibility to check them with respect to last delivery where the project got rejected for that reason. Every result produced while running the docker is saved correctly in the corresponding json files and it is possible to check them using the professor's solution checker (see below for the correct instruction).
-
 ## Checking the solutions built by the solvers
 
 Validate any solution using the provided checker:
