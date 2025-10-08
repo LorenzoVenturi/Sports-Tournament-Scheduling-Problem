@@ -1,0 +1,444 @@
+{
+  "chuffed_satisfiability_ch_base": {
+    "time": 0,
+    "optimal": true,
+    "obj": null,
+    "sol": [
+      [
+        [
+          1,
+          2
+        ]
+      ]
+    ]
+  },
+  "chuffed_satisfiability_ch_FF": {
+    "time": 0,
+    "optimal": true,
+    "obj": null,
+    "sol": [
+      [
+        [
+          1,
+          2
+        ]
+      ]
+    ]
+  },
+  "chuffed_satisfiability_ch_Rand": {
+    "time": 0,
+    "optimal": true,
+    "obj": null,
+    "sol": [
+      [
+        [
+          1,
+          2
+        ]
+      ]
+    ]
+  },
+  "chuffed_satisfiability_ch_SB_base": {
+    "time": 0,
+    "optimal": true,
+    "obj": null,
+    "sol": [
+      [
+        [
+          1,
+          2
+        ]
+      ]
+    ]
+  },
+  "chuffed_satisfiability_ch_SB_FF": {
+    "time": 0,
+    "optimal": true,
+    "obj": null,
+    "sol": [
+      [
+        [
+          1,
+          2
+        ]
+      ]
+    ]
+  },
+  "chuffed_satisfiability_ch_SB_Rand": {
+    "time": 0,
+    "optimal": true,
+    "obj": null,
+    "sol": [
+      [
+        [
+          1,
+          2
+        ]
+      ]
+    ]
+  },
+  "chuffed_optimiz_ch_FF": {
+    "time": 0,
+    "optimal": true,
+    "obj": 0,
+    "sol": [
+      [
+        [
+          1,
+          2
+        ]
+      ]
+    ]
+  },
+  "chuffed_optimiz_ch_FF_Luby": {
+    "time": 0,
+    "optimal": true,
+    "obj": 0,
+    "sol": [
+      [
+        [
+          1,
+          2
+        ]
+      ]
+    ]
+  },
+  "chuffed_optimiz_ch_Rand": {
+    "time": 0,
+    "optimal": true,
+    "obj": 0,
+    "sol": [
+      [
+        [
+          1,
+          2
+        ]
+      ]
+    ]
+  },
+  "chuffed_optimiz_ch_Rand_Luby": {
+    "time": 0,
+    "optimal": true,
+    "obj": 0,
+    "sol": [
+      [
+        [
+          1,
+          2
+        ]
+      ]
+    ]
+  },
+  "gecode_satisfiability_base": {
+    "time": 0,
+    "optimal": true,
+    "obj": null,
+    "sol": [
+      [
+        [
+          1,
+          2
+        ]
+      ]
+    ]
+  },
+  "gecode_satisfiability_FF": {
+    "time": 0,
+    "optimal": true,
+    "obj": null,
+    "sol": [
+      [
+        [
+          1,
+          2
+        ]
+      ]
+    ]
+  },
+  "gecode_satisfiability_DWD_Min": {
+    "time": 0,
+    "optimal": true,
+    "obj": null,
+    "sol": [
+      [
+        [
+          1,
+          2
+        ]
+      ]
+    ]
+  },
+  "gecode_satisfiability_DWD_rand": {
+    "time": 0,
+    "optimal": true,
+    "obj": null,
+    "sol": [
+      [
+        [
+          1,
+          2
+        ]
+      ]
+    ]
+  },
+  "gecode_satisfiability_SB_base": {
+    "time": 0,
+    "optimal": true,
+    "obj": null,
+    "sol": [
+      [
+        [
+          1,
+          2
+        ]
+      ]
+    ]
+  },
+  "gecode_satisfiability_SB_FF": {
+    "time": 0,
+    "optimal": true,
+    "obj": null,
+    "sol": [
+      [
+        [
+          1,
+          2
+        ]
+      ]
+    ]
+  },
+  "gecode_satisfiability_SB_DWD_Min": {
+    "time": 0,
+    "optimal": true,
+    "obj": null,
+    "sol": [
+      [
+        [
+          1,
+          2
+        ]
+      ]
+    ]
+  },
+  "gecode_satisfiability_SB_DWD_rand": {
+    "time": 0,
+    "optimal": true,
+    "obj": null,
+    "sol": [
+      [
+        [
+          1,
+          2
+        ]
+      ]
+    ]
+  },
+  "gecode_optimiz_impl_FF": {
+    "time": 0,
+    "optimal": true,
+    "obj": 0,
+    "sol": [
+      [
+        [
+          1,
+          2
+        ]
+      ]
+    ]
+  },
+  "gecode_optimiz_impl_DWD": {
+    "time": 0,
+    "optimal": true,
+    "obj": 0,
+    "sol": [
+      [
+        [
+          1,
+          2
+        ]
+      ]
+    ]
+  },
+  "gecode_optimiz_impl_DWD_NoSB": {
+    "time": 0,
+    "optimal": true,
+    "obj": 0,
+    "sol": [
+      [
+        [
+          1,
+          2
+        ]
+      ]
+    ]
+  },
+  "gecode_optimiz_impl_DWD_Luby": {
+    "time": 0,
+    "optimal": true,
+    "obj": 0,
+    "sol": [
+      [
+        [
+          1,
+          2
+        ]
+      ]
+    ]
+  },
+  "gecode_optimiz_impl_DWD_Luby_LNS": {
+    "time": 0,
+    "optimal": true,
+    "obj": 0,
+    "sol": [
+      [
+        [
+          1,
+          2
+        ]
+      ]
+    ]
+  },
+  "gecode_optimiz_impl_base_FF_noSB": {
+    "time": 0,
+    "optimal": true,
+    "obj": 0,
+    "sol": [
+      [
+        [
+          1,
+          2
+        ]
+      ]
+    ]
+  },
+  "gecode_optimiz_impl_base_FF_Luby": {
+    "time": 0,
+    "optimal": true,
+    "obj": 0,
+    "sol": [
+      [
+        [
+          1,
+          2
+        ]
+      ]
+    ]
+  },
+  "gecode_optimiz_impl_base_FF_Luby_LNS": {
+    "time": 0,
+    "optimal": true,
+    "obj": 0,
+    "sol": [
+      [
+        [
+          1,
+          2
+        ]
+      ]
+    ]
+  },
+  "com.google.ortools.sat_satisfiability_OR_base": {
+    "time": 0,
+    "optimal": true,
+    "obj": null,
+    "sol": [
+      [
+        [
+          1,
+          2
+        ]
+      ]
+    ]
+  },
+  "com.google.ortools.sat_satisfiability_OR_FF": {
+    "time": 0,
+    "optimal": true,
+    "obj": null,
+    "sol": [
+      [
+        [
+          1,
+          2
+        ]
+      ]
+    ]
+  },
+  "com.google.ortools.sat_satisfiability_OR_DWD": {
+    "time": 0,
+    "optimal": true,
+    "obj": null,
+    "sol": [
+      [
+        [
+          1,
+          2
+        ]
+      ]
+    ]
+  },
+  "com.google.ortools.sat_satisfiability_OR_SB_base": {
+    "time": 0,
+    "optimal": true,
+    "obj": null,
+    "sol": [
+      [
+        [
+          1,
+          2
+        ]
+      ]
+    ]
+  },
+  "com.google.ortools.sat_satisfiability_OR_SB_FF": {
+    "time": 0,
+    "optimal": true,
+    "obj": null,
+    "sol": [
+      [
+        [
+          1,
+          2
+        ]
+      ]
+    ]
+  },
+  "com.google.ortools.sat_satisfiability_OR_SB_DWD": {
+    "time": 0,
+    "optimal": true,
+    "obj": null,
+    "sol": [
+      [
+        [
+          1,
+          2
+        ]
+      ]
+    ]
+  },
+  "com.google.ortools.sat_optimiz_OR_FF": {
+    "time": 0,
+    "optimal": true,
+    "obj": 0,
+    "sol": [
+      [
+        [
+          1,
+          2
+        ]
+      ]
+    ]
+  },
+  "com.google.ortools.sat_optimiz_OR_DWD": {
+    "time": 0,
+    "optimal": true,
+    "obj": 0,
+    "sol": [
+      [
+        [
+          1,
+          2
+        ]
+      ]
+    ]
+  }
+}

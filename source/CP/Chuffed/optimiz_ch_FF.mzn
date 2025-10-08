@@ -94,8 +94,8 @@ output [
     ["\n"] ++
     [if p = 1 then "Period " ++ show(p) else "Period " ++ show(p) endif ++
      concat([let {
-         set of int: teams_in_period = {t | t in T where fix(per[w,t]) = p},
-         array[int] of int: team_list = [t | t in teams_in_period],
+         set of int: teams_in_period  = {t | t in T where fix(per[w,t]) = p},
+         array[int] of int: team_list  = [t | t in teams_in_period],
          int: t1 = if length(team_list) >= 1 then team_list[1] else 1 endif,
          int: t2 = if length(team_list) >= 2 then team_list[2] else 1 endif
      } in

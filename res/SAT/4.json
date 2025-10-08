@@ -1,0 +1,26 @@
+{
+  "sat_np": {
+    "time": 0,
+    "optimal": true,
+    "obj": null,
+    "sol": []
+  },
+  "sat_heule": {
+    "time": 0,
+    "optimal": true,
+    "obj": null,
+    "sol": []
+  },
+  "sat_np_sb": {
+    "time": 0,
+    "optimal": true,
+    "obj": null,
+    "sol": []
+  },
+  "sat_heule_sb": {
+    "time": 0,
+    "optimal": true,
+    "obj": null,
+    "sol": []
+  }
+}

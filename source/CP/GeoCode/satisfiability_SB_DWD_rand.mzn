@@ -60,16 +60,16 @@ solve :: seq_search([
 output [
     "Schedule SRR Tournament :\n",
     "        "] ++
-    ["Week " ++ show(w) ++ if w < n-1 then "  " else "" endif | w in W] ++
+    ["Week " ++ show(w)  ++ if w < n-1 then "  " else "" endif | w in W] ++
     ["\n"] ++
-    [if p = 1 then "Period " ++ show(p) else "Period " ++ show(p) endif ++
+    [if p = 1 then "Period  " ++ show(p) else "Period " ++ show(p) endif ++
      concat([let {
-         set of int: teams_in_period = {t | t in T where fix(per[w,t]) = p},
-         array[int] of int: team_list = [t | t in teams_in_period],
-         int: t1 = if length(team_list) >= 1 then team_list[1] else 1 endif,
-         int: t2 = if length(team_list) >= 2 then team_list[2] else 1 endif
+         set of int:  teams_in_period = {t | t in T where fix(per[w,t]) = p},
+         array[int]  of int: team_list = [t | t in teams_in_period],
+         int: t1 =  if length(team_list) >= 1 then team_list[1] else 1 endif,
+         int: t2 =  if length(team_list) >= 2 then team_list[2] else 1 endif
      } in
-     if card(teams_in_period) = 2 then
+     if  card(teams_in_period) = 2 then
          " " ++ show(min(t1,t2)) ++ " v " ++ show(max(t1,t2)) ++ " "
      else
          "       "

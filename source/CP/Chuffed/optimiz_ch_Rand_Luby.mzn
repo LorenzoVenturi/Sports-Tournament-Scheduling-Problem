@@ -90,7 +90,7 @@ output [
     "Schedule SRR Tournament (Break Minimization):\n",
     "Total breaks: " ++ show(total_breaks) ++ "\n\n",
     "        "] ++
-    ["Week " ++ show(w) ++ if w < n-1 then "  " else "" endif | w in W] ++
+    ["Week  " ++ show(w) ++ if w < n-1 then "  " else "" endif | w in W] ++
     ["\n"] ++
     [if p = 1 then "Period " ++ show(p) else "Period " ++ show(p) endif ++
      concat([let {
@@ -98,7 +98,7 @@ output [
          array[int] of int: team_list = [t | t in teams_in_period],
          int: t1 = if length(team_list) >= 1 then team_list[1] else 1 endif,
          int: t2 = if length(team_list) >= 2 then team_list[2] else 1 endif
-     } in
+     }  in
      if card(teams_in_period) = 2 then
          " " ++ show(min(t1,t2)) ++ " v " ++ show(max(t1,t2)) ++ " "
      else
@@ -107,6 +107,6 @@ output [
      "\n" | p in P] ++
      ["\n\nHome/Away Pattern:\n"] ++
      ["Team " ++ show(t) ++ ": " ++ 
-      concat([if fix(h[w,t]) then "H" else "A" endif | w in W]) ++
+      concat([if fix(h[w,t]) then "H" else  "A" endif | w in W]) ++
       " (Breaks: " ++ show(sum(w in 2..n-1)(fix(break[w,t]))) ++ ")\n" 
       | t in T];

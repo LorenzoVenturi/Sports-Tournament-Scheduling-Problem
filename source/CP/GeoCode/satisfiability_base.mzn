@@ -42,12 +42,6 @@ constraint
 % In any game, exactly one team is home and the other is away.
 constraint forall(w in W, t in T) (
    h[w,t] + h[w, opp[w,t]] = 1);
-
-%implied
-constraint
-  forall(w in W, i in T, j in T where i < j) (
-    (opp[w,i] == j) -> (opp[w,j] == i)
-  );
   
 
 solve satisfy;  
@@ -55,7 +49,7 @@ solve satisfy;
 output [
     "Schedule SRR Tournament :\n",
     "        "] ++
-    ["Week " ++ show(w) ++ if w < n-1 then "  " else "" endif | w in W] ++
+    ["week " ++ show(w) ++ if w < n-1 then "  " else "" endif | w in W] ++
     ["\n"] ++
     [if p = 1 then "Period " ++ show(p) else "Period " ++ show(p) endif ++
      concat([let {

@@ -1,0 +1,26 @@
+{
+  "smt_satisf": {
+    "time": 0,
+    "optimal": true,
+    "obj": null,
+    "sol": []
+  },
+  "smt_satisf_sb": {
+    "time": 0,
+    "optimal": true,
+    "obj": null,
+    "sol": []
+  },
+  "smt_opt": {
+    "time": 0,
+    "optimal": true,
+    "obj": null,
+    "sol": []
+  },
+  "smt_opt_sb": {
+    "time": 0,
+    "optimal": true,
+    "obj": null,
+    "sol": []
+  }
+}

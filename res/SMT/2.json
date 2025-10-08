@@ -1,0 +1,54 @@
+{
+  "smt_satisf": {
+    "time": 0,
+    "optimal": true,
+    "obj": null,
+    "sol": [
+      [
+        [
+          2,
+          1
+        ]
+      ]
+    ]
+  },
+  "smt_satisf_sb": {
+    "time": 0,
+    "optimal": true,
+    "obj": null,
+    "sol": [
+      [
+        [
+          2,
+          1
+        ]
+      ]
+    ]
+  },
+  "smt_opt": {
+    "time": 0,
+    "optimal": true,
+    "obj": 0,
+    "sol": [
+      [
+        [
+          2,
+          1
+        ]
+      ]
+    ]
+  },
+  "smt_opt_sb": {
+    "time": 0,
+    "optimal": true,
+    "obj": 0,
+    "sol": [
+      [
+        [
+          1,
+          2
+        ]
+      ]
+    ]
+  }
+}

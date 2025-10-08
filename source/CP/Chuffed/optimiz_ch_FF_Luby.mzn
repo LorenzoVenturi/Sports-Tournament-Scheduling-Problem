@@ -87,7 +87,7 @@ solve
 
 
 output [
-    "Schedule SRR Tournament (Break Minimization):\n",
+    "schedule SRR Tournament (Break Minimization): \n",
     "Total breaks: " ++ show(total_breaks) ++ "\n\n",
     "        "] ++
     ["Week " ++ show(w) ++ if w < n-1 then "  " else "" endif | w in W] ++
@@ -106,7 +106,7 @@ output [
      endif | w in W]) ++
      "\n" | p in P] ++
      ["\n\nHome/Away Pattern:\n"] ++
-     ["Team " ++ show(t) ++ ": " ++ 
+     ["team " ++ show(t) ++ ": " ++ 
       concat([if fix(h[w,t]) then "H" else "A" endif | w in W]) ++
-      " (Breaks: " ++ show(sum(w in 2..n-1)(fix(break[w,t]))) ++ ")\n" 
+      " (breaks: " ++ show(sum(w in 2..n-1)(fix(break[w,t]))) ++ ")\n" 
       | t in T];

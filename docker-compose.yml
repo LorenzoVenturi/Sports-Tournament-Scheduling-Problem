@@ -1,0 +1,12 @@
+services:
+  cdmo_solvers_ambient:
+    volumes:
+      - .:/cdmo
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: cdmo_project
+    container_name: cdmo_solvers_container
+    working_dir: /cdmo
+    stdin_open: true
+    tty: true
